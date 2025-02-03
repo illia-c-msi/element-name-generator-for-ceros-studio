@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Name generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="header">
+        <img src="msi_logo.png" alt="Motorola Solutions Logo" id="logo" />
+        <h1>Element name generator for Ceros Studio</h1>
+    </div>
+
+    <form id="multi-step-form">
+        <div class="step active" data-step="1">
+            <h2>Element Location</h2>
+            <label for="location-h"><input type="radio" id="location-h" name="location" value="h" />
+                Header</label><br />
+            <label for="location-b"><input type="radio" id="location-b" name="location" value="b" /> Body</label><br />
+            <label for="location-f"><input type="radio" id="location-f" name="location" value="f" />
+                Footer</label><br />
+            <button type="button" class="next-step">Next</button>
+        </div>
+
+        <div class="step" data-step="2">
+            <h2>
+                Element Type
+                <span class="info"
+                    title="If clicking the element leads to another website (including Motorola subdomains) then it's a link. If this element shares other functionality then it's a button.">&#9432;</span>
+            </h2>
+            <label for="type-l"><input type="radio" id="type-l" name="type" value="l" /> Link</label><br />
+            <label for="type-b"><input type="radio" id="type-b" name="type" value="b" /> Button</label><br />
+            <button type="button" class="previous-step">Previous</button>
+            <button type="button" class="next-step">Next</button>
+        </div>
+
+        <div class="step" data-step="3-link">
+            <h2>
+                Link Type
+                <span class="info"
+                    title="If the link leads to another Motorola subdomain then it's an onsite click, if the URL leads to another website then it's an offsite click.">&#9432;</span>
+            </h2>
+            <label for="link-type-on"><input type="radio" id="link-type-on" name="link-type" value="on" />
+                Onsite</label><br />
+            <label for="link-type-off"><input type="radio" id="link-type-off" name="link-type" value="off" />
+                Offsite</label><br />
+            <button type="button" class="previous-step">Previous</button>
+            <button type="button" class="next-step">Next</button>
+        </div>
+
+        <div class="step" data-step="3-button">
+            <h2>
+                Button Type
+                <span class="info"
+                    title="If the button's primary action is to lead to a type of document (to read or download) then call it downloadable. Other elements should be named not downloadable.">&#9432;</span>
+            </h2>
+            <label for="button-type-d"><input type="radio" id="button-type-d" name="button-type" value="d" />
+                Downloadable</label><br />
+            <label for="button-type-nd"><input type="radio" id="button-type-nd" name="button-type" value="nd" /> Not
+                Downloadable</label><br />
+            <button type="button" class="previous-step">Previous</button>
+            <button type="button" class="next-step">Next</button>
+        </div>
+
+        <div class="step" data-step="3-button-downloadable">
+            <h2>Downloadable Type</h2>
+            <label for="downloadable-type-ds"><input type="radio" id="downloadable-type-ds" name="downloadable-type"
+                    value="ds" /> Datasheet</label><br />
+            <label for="downloadable-type-bri"><input type="radio" id="downloadable-type-bri" name="downloadable-type"
+                    value="bri" /> Brief</label><br />
+            <label for="downloadable-type-bro"><input type="radio" id="downloadable-type-bro" name="downloadable-type"
+                    value="bro" /> Brochure</label><br />
+            <label for="downloadable-type-cs"><input type="radio" id="downloadable-type-cs" name="downloadable-type"
+                    value="cs" /> Casestudies</label><br />
+            <label for="downloadable-type-wp"><input type="radio" id="downloadable-type-wp" name="downloadable-type"
+                    value="wp" /> Whitepapers</label><br />
+            <label for="downloadable-type-g"><input type="radio" id="downloadable-type-g" name="downloadable-type"
+                    value="g" /> Guides</label><br />
+            <label for="downloadable-type-o"><input type="radio" id="downloadable-type-o" name="downloadable-type"
+                    value="o" /> Other</label><br />
+            <button type="button" class="previous-step">Previous</button>
+            <button type="button" class="next-step">Next</button>
+        </div>
+
+        <div class="step" data-step="4">
+            <h2>
+                Label
+                <span class="info"
+                    title="Element's business-friendly name. In most cases, it can be the value of the clicked element.">&#9432;</span>
+            </h2>
+            <input type="text" id="label" name="label" />
+            <button type="button" class="previous-step">Previous</button>
+            <button type="button" id="submit-form">Submit</button>
+        </div>
+
+        <div id="result-step" class="step">
+            <h2>Result</h2>
+            <div id="result"></div>
+            <button type="button" id="copy-button">Copy</button>
+            <button type="button" id="start-over">Start Over</button>
+        </div>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

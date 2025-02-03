@@ -1,0 +1,201 @@
+/* Basic Resets */
+body,
+h1,
+h2,
+input,
+button {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f7;
+    /* Light gray background */
+    color: #333;
+    /* Darker text color */
+    padding: 20px;
+    box-sizing: border-box;
+    /* Include padding in element's total width and height */
+}
+
+/* Header */
+#header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    /* Increased spacing */
+}
+
+#logo {
+    height: 30px;
+    /* Slightly smaller logo */
+    margin-right: 15px;
+}
+
+h1 {
+    font-size: 1.5em;
+    /* Larger title on desktop */
+    font-weight: 500;
+}
+
+/* Steps */
+.step {
+    display: none;
+    background-color: white;
+    border-radius: 12px;
+    /* More rounded corners */
+    padding: 25px;
+    /* Increased padding */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    /* More pronounced shadow */
+    margin-bottom: 20px;
+}
+
+.step.active {
+    display: block;
+}
+
+.step h2 {
+    /* Target h2 within .step */
+    margin-bottom: 25px;
+    /* Increased margin below question title */
+}
+
+/* Form Elements */
+label {
+    display: block;
+    margin-bottom: 8px;
+    /* Decreased margin between labels/answers */
+    font-weight: 400;
+    color: #555;
+}
+
+input[type='radio'] {
+    margin-right: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    vertical-align: middle;
+}
+
+input[type='radio']:checked {
+    background-color: #007aff;
+    border-color: #007aff;
+}
+
+input[type='radio']:checked::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 3px;
+}
+
+input[type='text'] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+input[type='text'] {
+    width: 100%;
+    padding: 12px;
+    /* Increased padding */
+    border: 1px solid #ddd;
+    /* Lighter border */
+    border-radius: 8px;
+    /* More rounded corners */
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    /* Larger font size */
+}
+
+/* Buttons */
+button {
+    background-color: #007aff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    /* Increased padding */
+    border-radius: 8px;
+    /* More rounded corners */
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    /* Larger font size */
+    margin-right: 10px;
+    /* Add spacing between buttons */
+    appearance: none;
+    /* Remove default button styling */
+    -webkit-appearance: none;
+    /* For Safari */
+}
+
+button:hover {
+    background-color: #0062cc;
+}
+
+button:disabled {
+    /* Disabled button style */
+    background-color: #ccc;
+    cursor: default;
+}
+
+/* Result */
+#result {
+    background-color: #eee;
+    padding: 15px;
+    /* Increased padding */
+    border-radius: 8px;
+    /* More rounded corners */
+    margin-bottom: 15px;
+    /* Increased spacing */
+    font-size: 16px;
+    /* Larger font size */
+    white-space: pre-wrap;
+    /* Allow text wrapping */
+}
+
+/* Info Icon */
+.info {
+    display: inline-block;
+    margin-left: 8px;
+    cursor: help;
+    font-size: 12px;
+    /* Slightly smaller font size */
+    color: #888;
+    vertical-align: middle;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+
+    /* Adjust breakpoint as needed */
+    h1 {
+        font-size: 1.2em;
+        /* Smaller title on mobile */
+    }
+
+    .step {
+        padding: 20px;
+        /* Slightly less padding on mobile */
+    }
+
+    button {
+        padding: 10px 20px;
+        /* Smaller padding on mobile buttons */
+        font-size: 14px;
+    }
+}
